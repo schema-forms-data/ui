@@ -39,6 +39,19 @@ pnpm add lucide-react react react-dom
 
 ---
 
+## Ordem de atualização
+
+`ui` ocupa a **terceira posição** na cadeia:
+
+```
+core  →  templates  →  [ui]  →  renderer  →  builder  →  react
+```
+
+Ao bumpar `ui`:
+1. Certifique que `@schema-forms-data/templates` (devDep) está na versão desejada
+2. Bumpa e publica `ui`
+3. Atualiza a referência a `ui` em `renderer`, `builder` e `react`
+
 ## Build
 
 ```bash
@@ -57,13 +70,11 @@ npm version patch        # 4.0.7 -> 4.0.8 (faz commit + tag)
 git push --follow-tags   # push na main dispara o publish da nova versão
 ```
 
-Usa **npm Trusted Publishing (OIDC)** — sem `NPM_TOKEN` armazenado — e anexa
-**provenance** automaticamente.
-
-> Primeira publicação: o Trusted Publisher do npm precisa do pacote já existindo.
-> Faça a versão inicial uma vez manualmente (`npm publish`), depois configure o Trusted
-> Publisher no npmjs.com e deixe o restante por conta do workflow.
+Requer o secret **`NPM_TOKEN`** no repositório GitHub (Settings → Secrets → Actions →
+`NPM_TOKEN`). Gere um **Automation token** em npmjs.com → Account → Access Tokens.
+O flag `--provenance` anexa attestation de build automaticamente (rastreabilidade de
+supply chain, sem custo extra).
 
 ## Licença
 
-[MIT](LICENSE) © Inovex Tecnologia
+[MIT](LICENSE) © schema-forms-data
