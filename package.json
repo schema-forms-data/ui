@@ -1,6 +1,6 @@
 {
   "name": "@schema-forms-data/ui",
-  "version": "4.0.10",
+  "version": "4.0.11",
   "description": "Shared UI components (Radix UI + Tailwind) for SchemaForms packages",
   "license": "MIT",
   "author": "SchemaForms",
