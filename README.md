@@ -52,29 +52,6 @@ Ao bumpar `ui`:
 2. Bumpa e publica `ui`
 3. Atualiza a referência a `ui` em `renderer`, `builder` e `react`
 
-## Build
-
-```bash
-pnpm install
-pnpm build      # tsc -> dist/
-```
-
-## Publicar
-
-Automático: a cada **push na `main`**, o workflow (`.github/workflows/publish.yml`)
-publica **somente se a versão do `package.json` ainda não existir no npm**. Push de
-README/refactor não republica nada — pra lançar, basta dar bump na versão:
-
-```bash
-npm version patch        # 4.0.7 -> 4.0.8 (faz commit + tag)
-git push --follow-tags   # push na main dispara o publish da nova versão
-```
-
-Requer o secret **`NPM_TOKEN`** no repositório GitHub (Settings → Secrets → Actions →
-`NPM_TOKEN`). Gere um **Automation token** em npmjs.com → Account → Access Tokens.
-O flag `--provenance` anexa attestation de build automaticamente (rastreabilidade de
-supply chain, sem custo extra).
-
 ## Licença
 
 [MIT](LICENSE) © schema-forms-data
