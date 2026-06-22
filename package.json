@@ -76,7 +76,7 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
-    "@schema-forms-data/templates": "4.0.11",
+    "@schema-forms-data/templates": "4.0.13",
     "@tailwindcss/vite": "4.3.1",
     "@types/react": "18.3.23",
     "@types/react-dom": "18.3.7",
